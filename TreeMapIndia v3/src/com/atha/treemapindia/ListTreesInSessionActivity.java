@@ -12,6 +12,11 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+/**
+ * This activity lists the trees in each session for that surveyor
+ * 
+ * */
+
 public class ListTreesInSessionActivity extends ListActivity
 {
 

@@ -21,6 +21,10 @@ import android.provider.Settings;
 import android.util.Log;
 import android.widget.Toast;
 
+/**
+ * This class handles all the database related things
+ * */
+
 public class DatabaseHelper extends SQLiteOpenHelper
 {
 	public static final long	  SESSION_CHANGE_TIMEOUT	         = 10 * 60 * 1000;	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                // 10
@@ -158,6 +162,10 @@ public class DatabaseHelper extends SQLiteOpenHelper
 	private static SQLiteDatabase	db	                             = null;
 	private Context	              context	                         = null;
 
+	/**
+	 * Initialize the database
+	 * */
+
 	protected DatabaseHelper(Context context, String name, CursorFactory factory, int version)
 	{
 		super(context, name, factory, version);
@@ -172,6 +180,10 @@ public class DatabaseHelper extends SQLiteOpenHelper
 	{
 		this(context, DATABASE_NAME, null, 1);
 	}
+	
+	/**
+	 * call this method whenever an activity reloads or restarts, in order for it to call the database methods
+	 */
 
 	public boolean openDatabase()
 	{
@@ -195,6 +207,10 @@ public class DatabaseHelper extends SQLiteOpenHelper
 			super.close();
 		}
 	}
+	
+	/*
+	 * Get all rows of tree detail table
+	 * */
 
 	public Cursor getAllTreedetailCursor()
 	{
@@ -295,7 +311,7 @@ public class DatabaseHelper extends SQLiteOpenHelper
 		}
 		return str;
 	}
-	
+
 	@Override
 	public void onCreate(SQLiteDatabase db)
 	{
@@ -1013,6 +1029,10 @@ public class DatabaseHelper extends SQLiteOpenHelper
 		db.insert(TABLE_SESSION, null, values);
 		return sessionId;
 	}
+	
+	/**
+	 * return a new session if the current session is more than 10 mins old
+	 * */
 
 	public String getSessionAccordingTo10Mins(int surveyorId)
 	{
@@ -1049,6 +1069,10 @@ public class DatabaseHelper extends SQLiteOpenHelper
 		}
 		return sessionId;
 	}
+	
+	/**
+	 * update the time column of session,after creating a new session, so that it gives the correct session for 10 mins interval
+	 * */
 
 	public boolean updateSessionTime(String sessionId, int surveyorId)
 	{

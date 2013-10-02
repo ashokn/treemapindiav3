@@ -11,11 +11,14 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.provider.Settings;
 
+/**
+ * This is the initial splash screen
+ * */
+
 public class Splash extends Activity
 {
 
 	private static final int	SPLASH_DISPLAY_TIME	= 2000; /* 2 seconds */
-	private DatabaseHandler	 _db;
 
 	/** Called when the activity is first created. */
 	@Override
@@ -28,15 +31,6 @@ public class Splash extends Activity
 		 * Create a new handler with which to start the main activity and close this splash activity
 		 * after SPLASH_DISPLAY_TIME has elapsed.
 		 */
-		try
-		{
-			_db = new DatabaseHandler(Splash.this);
-		}
-		catch (IOException e)
-		{
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 		new Handler().postDelayed(new Runnable() {
 			@Override
 			public void run()

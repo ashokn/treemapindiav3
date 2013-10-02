@@ -16,6 +16,10 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+/**
+ * This activity displays the tree details and handles edits and deletes of those trees.
+ * */
+
 public class ViewTreeDetailActivity extends Activity
 {
 

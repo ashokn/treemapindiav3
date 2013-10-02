@@ -1,5 +1,9 @@
 package com.atha.treemapindia;
 
+/**
+ * This class acts as a placeholder for area values when filling the form.
+ */
+
 public class Area_Details
 {
 	String	prop_type, prop_desc, prop_owner, house_no, survey_no, form_key;

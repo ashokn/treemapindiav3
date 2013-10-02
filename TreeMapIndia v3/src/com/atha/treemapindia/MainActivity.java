@@ -48,6 +48,10 @@ import com.google.android.apps.mytracks.content.Track;
 import com.google.android.apps.mytracks.services.ITrackRecordingService;
 import com.google.android.apps.mytracks.stats.TripStatistics;
 
+/**
+ * This activity shows the initial page
+ * */
+
 public class MainActivity extends Activity
 {
 
@@ -67,7 +71,6 @@ public class MainActivity extends Activity
 	Area_Details	               _ad;
 	Unique_Area_Detail	           _uad;
 
-	private DatabaseHandler	       _db1;
 	private DatabaseHelper	       db	             = null;
 
 	Track	                       tr	             = null;
@@ -232,17 +235,8 @@ public class MainActivity extends Activity
 			}
 		});
 
-		try
-		{
-			_db1 = new DatabaseHandler(this);
-			db = new DatabaseHelper(this);
-		}
-		catch (IOException e)
-		{
-			e.printStackTrace();
-		}
+		db = new DatabaseHelper(this);
 
-		_db1.open();
 		exdata = (Button) findViewById(R.id.exda);
 		// pvs = (ViewSwitcher) findViewById(R.id.viewSwitcher1);
 		badd_tree = (Button) findViewById(R.id.add_tree);
@@ -445,7 +439,6 @@ public class MainActivity extends Activity
 					// Toast.makeText(MainActivity.this, "location is null",
 					// Toast.LENGTH_LONG).show();
 				}
-				_db1.open();
 				if (st == 1)
 				{
 					// if (((RadioButton)

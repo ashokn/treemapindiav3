@@ -3,6 +3,10 @@ package com.atha.treemapindia;
 import java.io.Serializable;
 import java.util.Arrays;
 
+/**
+ * This class acts as a placeholder for a particular session
+ * */
+
 public class Session implements Serializable
 {
 	/**

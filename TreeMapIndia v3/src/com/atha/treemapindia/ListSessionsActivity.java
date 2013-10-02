@@ -30,6 +30,10 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+/**
+ * This activity lists the sessions for that surveyor
+ * */
+
 public class ListSessionsActivity extends ListActivity
 {
 	private ArrayList<String>	 listItems	= new ArrayList<String>();

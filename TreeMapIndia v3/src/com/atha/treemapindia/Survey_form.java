@@ -58,6 +58,10 @@ import com.google.android.apps.mytracks.content.Track;
 import com.google.android.apps.mytracks.content.Waypoint;
 import com.google.android.apps.mytracks.services.ITrackRecordingService;
 
+/**
+ * This activity is the form to be filled by the surveyor
+ * */
+
 public class Survey_form extends Activity
 {
 
@@ -98,7 +102,6 @@ public class Survey_form extends Activity
 	Treelist	                   tl;
 	String[]	                   tl_value;
 	ArrayList<Treelist>	           list;
-	Surveydetail	               _sd;
 	TreeDetails	                   td;
 
 	private static int	           TAKE_PICTURE	       = 1;
@@ -601,7 +604,6 @@ public class Survey_form extends Activity
 						height_m = Double.parseDouble(et_hmt.getText().toString());
 						girth_cm = Double.parseDouble(et_gcm.getText().toString());
 						girth_m = Double.parseDouble(et_gmt.getText().toString());
-						_sd = new Surveydetail(fno, prop_id, tree_no, tree_name, botanical_name, burrows, nest, fruits, flowers, nails, poster, wires, tree_guard, men_other, men_other_desc, health_tree, found_ground, ground_condition, risk_on_tree, risk_desc, pest_affected, ref_to_dept, s_other, s_other_desc, height_ft, height_m, girth_cm, girth_m, lat, lon);
 						td = new TreeDetails();
 						td.setFormNumber(fno);
 						td.setPropertyId(prop_id);
@@ -641,12 +643,8 @@ public class Survey_form extends Activity
 						td.setImageP2(imageNames[3]);
 						td.setImageOther(imageNames[4]);
 						// _sd.setSessionId(sessionId);
-						_sd.setPrabhagId(prabhagId);
-						_sd.setClusterId(clusterId);
 						// Toast.makeText(Survey_form.this, "surveyorId: " + surveyorId,
 						// Toast.LENGTH_LONG).show();
-						_sd.setSurveyorId(surveyorId);
-						_sd.setImages(imageNames);
 						// _db.insertSurveydetails(_sd);
 						// dbHelper.insertSurveydetails(_sd);
 						dbHelper.insertSurveydetails(td);

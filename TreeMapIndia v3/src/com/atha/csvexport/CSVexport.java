@@ -10,13 +10,11 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Environment;
 import android.util.Log;
 
-import com.atha.treemapindia.DatabaseHandler;
 import com.atha.treemapindia.DatabaseHelper;
 
 public class CSVexport
 {
 	Context	               _context;
-	DatabaseHandler	       _db;
 	SQLiteDatabase	       _sld;
 
 	Cursor	               cur_uad, cur_ad, cur_sd;
